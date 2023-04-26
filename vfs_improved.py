@@ -18,7 +18,7 @@ class VFS:
 
     def get_status(self):
         #driver = webdriver.Chrome(executable_path='./chromedriver.exe') # This gives deprecation warning
-        s = Service('./chromedriver.exe')
+        s = Service('./chromedriver.exe') #download chromedriver at https://chromedriver.chromium.org/downloads
         driver = webdriver.Chrome(service=s)
         driver.get("https://www.vfsvisaonline.com/DHAOnlineTracking/OnlineTracking.aspx")
         time.sleep(2)
@@ -33,16 +33,16 @@ class VFS:
 
 class TestVFS(unittest.TestCase):
     def test_trp_1(self):
-        vfs_trp_1 = VFS('Ebert', 'TRRzzzzzzzzz')
-        self.assertEqual(vfs_trp_1.get_status(), 'Application for zzzzzzz has been received at DHA on 26 Jan 2022.', 'Unexpected status for Bram TRP')
+        vfs_trp_1 = VFS('xxxxx', 'TRRzzzzzzzzz')
+        self.assertEqual(vfs_trp_1.get_status(), 'Application for zzzzzzz has been received at DHA on zzzzzzzz.', 'Unexpected status for foo')
 
     def test_trp_2(self):
-        vfs_trp_2 = VFS('Ebert', 'TRRzzzzzzzzz')
-        self.assertEqual(vfs_trp_2.get_status(), 'Application for zzzzzzz has been received at DHA on 27 Sep 2021.', 'Unexpected status for David TRP')
+        vfs_trp_2 = VFS('xxxxx', 'TRRzzzzzzzzz')
+        self.assertEqual(vfs_trp_2.get_status(), 'Application for zzzzzzz has been received at DHA on zzzzzzzz.', 'Unexpected status for bar')
 
     def test_trp_3(self):
-        vfs_trp_3 = VFS('Ebert', 'TRRzzzzzzzzz')
-        self.assertEqual(vfs_trp_3.get_status(), 'Application for zzzzzzz has been received at DHA on zzzzzzzz.', 'Unexpected status for Bram PRP')
+        vfs_trp_3 = VFS('xxxxx', 'TRRzzzzzzzzz')
+        self.assertEqual(vfs_trp_3.get_status(), 'Application for zzzzzzz has been received at DHA on zzzzzzzz.', 'Unexpected status for baz')
 
 
 unittest.main()
