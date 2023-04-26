@@ -10,7 +10,7 @@ TEXT_FIELD_RESULT_XPATH = "/html/body/form/div[3]/table/tbody/tr[2]/td/div/div[2
 
 
 
-driver = webdriver.Chrome(executable_path='./chromedriver.exe')
+driver = webdriver.Chrome(executable_path='./chromedriver.exe') #download chromedriver at https://chromedriver.chromium.org/downloads
 driver.get("https://www.vfsvisaonline.com/DHAOnlineTracking/OnlineTracking.aspx")
 
 result_text_fields = []
